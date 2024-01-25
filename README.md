@@ -22,3 +22,13 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+<!-- Create Api Countries
+install HTTParty
+ restful api : REST Countries
+ create 4 endpoints
+1. get all countries
+2. get country by name
+3. get country by language
+4. get country by capital 
+create routes for every endpoints -->
