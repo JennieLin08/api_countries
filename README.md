@@ -1,33 +1,20 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Getting Started
+This external api is inspired on restcountries.eu by Fayder Florez. Although the original project has now moved to a subscription base API, this project is still Open Source and Free to use.
 
-Things you may want to cover:
+Prerequisites
+1. install HTTparty 
+For more examples, please refer to the Documentation https://github.com/jnunemaker/httparty
+2. postman to access json result
 
-* Ruby version
+Installation
 
-* System dependencies
+Clone the repo
+git clone https://github.com/JennieLin08/api_countries.git
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-<!-- Create Api Countries
- install HTTParty
- restful api : REST Countries
-
-show output in postman with http_method get and url :https://restcountries.com/v3.1
+Usage
+Create external api using restful api : REST Countries link https://restcountries.com/
+get link from your rails server then input key and value for diff. endpoints
 key 
   1. page
   2. qry
@@ -38,9 +25,9 @@ value for page
   4. capital
   5. region
 value for qry
-  1. name (name of country)
+  1. if page = name, value is country name 
   2. language of the country
   3. capital of the country
   4. region of the country
 create an error message
- -->
+

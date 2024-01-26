@@ -20,7 +20,7 @@ class CountriesController < ApplicationController
     when 404
       render json: 'iss, walang ganyan!'
     else
-      render json: 'better try next time!'
+      render json: 'better try again next time!'
     end
     
   end
