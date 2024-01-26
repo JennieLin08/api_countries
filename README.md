@@ -24,11 +24,23 @@ Things you may want to cover:
 * ...
 
 <!-- Create Api Countries
-install HTTParty
+ install HTTParty
  restful api : REST Countries
- create 4 endpoints
-1. get all countries
-2. get country by name
-3. get country by language
-4. get country by capital 
-create routes for every endpoints -->
+
+show output in postman with http_method get and url :https://restcountries.com/v3.1
+key 
+  1. page
+  2. qry
+value for page 
+  1. all
+  2. name
+  3. language
+  4. capital
+  5. region
+value for qry
+  1. name (name of country)
+  2. language of the country
+  3. capital of the country
+  4. region of the country
+create an error message
+ -->

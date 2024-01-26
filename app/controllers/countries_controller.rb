@@ -5,37 +5,24 @@ class CountriesController < ApplicationController
   require 'json'
 
   def home
- 
-    response = self.class.get("/all",headers: { 'Content-Type' => 'application/json' })
-    res = JSON.parse(response.body)
-    @response = JSON.pretty_generate(res)
-    render json: @response
-    # puts JSON.pretty_generate(@response)
-  end
+    if params["page"] == "all" 
+      response = self.class.get("/all",headers: { 'Content-Type' => 'application/json' })
 
-  def name
-    response = self.class.get("/name/philippines",headers: { 'Content-Type' => 'application/json' })
-    res = JSON.parse(response.body)
-    @response = JSON.pretty_generate(res)
-    render json: @response
-    # https://restcountries.com/v3.1/name/deutschland
-  end
-
-  def language
-
-    response = self.class.get("/lang/filipino",headers: { 'Content-Type' => 'application/json' })
-    res = JSON.parse(response.body)
-    @response = JSON.pretty_generate(res)
-    render json: @response
-    # https://restcountries.com/v3.1/lang/spanish
-  end
-
-  def capital
-    response = self.class.get("/capital/manila",headers: { 'Content-Type' => 'application/json' })
-    res = JSON.parse(response.body)
-    @response = JSON.pretty_generate(res)
-    render json: @response
-    # https://restcountries.com/v3.1/region/europe
+    else
+      response = self.class.get("/#{params["page"]}/#{params["qry"]}",headers: { 'Content-Type' => 'application/json' })
+    end
+    
+    case response.code
+    when 200
+      res = JSON.parse(response.body)
+      @response = JSON.pretty_generate(res)
+      render json: @response
+    when 404
+      render json: 'iss, walang ganyan!'
+    else
+      render json: 'better try next time!'
+    end
+    
   end
 
 end

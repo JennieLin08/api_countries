@@ -4,9 +4,6 @@ Rails.application.routes.draw do
   end
 
   root 'countries#home'
-  get '/countries/name', to: 'countries#name'
-  get '/countries/language', to: 'countries#language'
-  get '/countries/capital', to: 'countries#capital'
 
   get '/api', to: 'api/ctries#home'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
